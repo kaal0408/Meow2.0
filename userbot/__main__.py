@@ -8,7 +8,7 @@ import telethon.utils
 from telethon import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 
-from userbot import LOGS, bot, Meowver
+from userbot import LOGS, bot
 from userbot.Config import Var
 from userbot.utils import load_module,start_mybot, load_pmbot
 from pathlib import Path
