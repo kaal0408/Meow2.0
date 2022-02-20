@@ -9,6 +9,7 @@ from userbot import CMD_LIST
 import re
 import logging
 import inspect
+from userbot import Config
 
 handler = Var.CMD_HNDLR if Var.CMD_HNDLR else r"\."
 sudo_hndlr = Var.SUDO_HNDLR if Var.SUDO_HNDLR else "."
