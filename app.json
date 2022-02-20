@@ -1,17 +1,16 @@
 {
- "name": "Lucifer - UserBot",
+ "name": "Meow 2.0",
  "description": "An advanced Telethon Userbot, from @Lucifer_support_group",
- "logo": "https://telegra.ph/file/73373552e9217e010e853.jpg",
  "keywords": [
   "telegram",
   "userbot",
-  "TeleBot",
+  "Meow",
   "modular",
   "productivity"
  ],
- "repository": "https://github.com/kaal0408/Lucifer/",
- "website": "https://github.com/kaal0408/Lucifer/",
- "success_url": "https://t.me/Lucifer_support_group",
+ "repository": "https://github.com/kaal0408/Meow2?0/",
+ "website": "https://github.com/kaal0408/Meow2.0/",
+ "success_url": "https://t.me/Murat_30_God",
  "stack": "container",
  "env": {
   "ENV": {
