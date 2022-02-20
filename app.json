@@ -24,11 +24,11 @@
   },
   "APP_ID": {
    "description": "Get this value from my.telegram.org! Please do not steal",
-   "value": ""
+   "value": "10858483"
   },
   "API_HASH": {
    "description": "Get this value from my.telegram.org! Please do not steal",
-   "value": ""
+   "value": "a78c85cd82c08964d02c74e74e5412c2"
   },
   "STRING_SESSION": {
    "description": "Get this value by running Lucifer repl get it from @Lucifer_support_group.",
@@ -95,7 +95,7 @@
   },
   "PRIVATE_GROUP_ID": {
    "description": "ID of your private log channel/group. Read https://telegra.ph/TeleBot-Setup-06-06 for details.",
-   "value": "",
+   "value": "-617553560",
    "required": true
   },
   "HEROKU_APP_NAME": {
@@ -105,12 +105,12 @@
   },
   "TG_BOT_TOKEN_BF_HER": {
    "description": "Needed for inline buttons maker. Make a bot at @BotFather and get the token of your bot.",
-   "value": "",
+   "value": "5112479261:AAEH6_kGXXruy5nY4yyiS8Cien16aupjRaE",
    "required": true
   },
   "TG_BOT_USER_NAME_BF_HER": {
    "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot. Needed for .help to work.",
-   "value": "",
+   "value": "Pyrotrialbot",
    "required": true
   },
   "ALIVE_NAME": {
