@@ -8,12 +8,12 @@ import telethon.utils
 from telethon import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 
-from Meow import LOGS, bot, Meowver
-from Meow.Config import Var
-from Meow.utils import load_module,start_mybot, load_pmbot
+from userbot import LOGS, bot, Meowver
+from userbot.Config import Var
+from userbot.utils import load_module,start_mybot, load_pmbot
 from pathlib import Path
 import telethon.utils
-from Meow import CMD_HNDLR
+from userbot import CMD_HNDLR
 
 MEOW = Var.PRIVATE_GROUP_ID
 BOTNAME = Var.TG_BOT_USER_NAME_BF_HER
@@ -27,7 +27,7 @@ async def add_bot(bot_token):
 
 async def startup_log_all_done():
     try:
-        await bot.send_message(Meow, f"**𝙻ucifer 𝙱𝙾𝚃 𝙸𝚂 𝙳𝙴𝙿𝙻𝙾𝚈𝙴𝙳.\n𝚂𝙴𝙽𝙳** `{CMD_HNDLR}alive` **𝚃𝙾 𝚂𝙴𝙴 𝙱𝙾𝚃 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙾𝚁 𝙽𝙾𝚃.\n\nAdd** @{BOTNAME} **𝙰𝙳𝙳 𝚃𝙾 𝚃𝙷𝙸𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙷𝙸𝙼 𝙰𝙳𝙼𝙸𝙽 𝙵𝙾𝚁 𝙴𝙽𝙰𝙱𝙻𝙸𝙽𝙶 𝙰𝙻𝙻 𝚃𝙷𝙴 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂 𝙾𝙵 𝙻ucifer 𝙱𝙾𝚃**")
+        await bot.send_message(Meow, f"**Meow 2.0 𝙱𝙾𝚃 𝙸𝚂 𝙳𝙴𝙿𝙻𝙾𝚈𝙴𝙳.\n𝚂𝙴𝙽𝙳** `{CMD_HNDLR}alive` **𝚃𝙾 𝚂𝙴𝙴 𝙱𝙾𝚃 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙾𝚁 𝙽𝙾𝚃**")
     except BaseException:
         print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
 
@@ -52,7 +52,7 @@ else:
     else:
         bot.start()
 
-path = 'Meow/plugins/*.py'
+path = 'userbot/plugins/*.py'
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
@@ -61,22 +61,22 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 if LOAD_MYBOT == "True":
-    path = "Meow/plugins/mybot/pmbot/*.py"
+    path = "userbot/plugins/mybot/pmbot/*.py"
     files = glob.glob(path)
     for name in files:
         with open(name) as f:
             path1 = Path(f.name)
             shortname = path1.stem
             load_pmbot(shortname.replace(".py", ""))
-    print("TGBot set up completely!")
+    print("MeowBot set up completely!")
 
-print("TGBot set up - Level - Basic")
+print("MeowBot set up - Level - Basic")
 print(
     """
                 ----------------------------------------------------------------------
-                    Meow X 2.0 ʜᴀs ʙᴇᴇɴ ᴅᴇᴘʟᴏʏᴇᴅ, ᴅᴏ ᴠɪsɪᴛ @Meow_support_group !!
+                    Meow  2.0 ʜᴀs ʙᴇᴇɴ ᴅᴇᴘʟᴏʏᴇᴅ, ᴅᴏ ᴠɪsɪᴛ @Murat_30_God !!
                     Meow ᴠᴇʀ: V2.2
-                    ©Tᴇᴀᴍ ʟucifer
+                    ©Team Meow
                 ----------------------------------------------------------------------
 """
 )
@@ -87,7 +87,6 @@ async def Meow_is_on():
         if Config.LOGGER_ID != 0:
             await bot.send_file(
                 Config.LOGGER_ID,
-                HELL_PIC,
                 caption=f"#START \n\nDeployed MeowBot Successfully\n\n**Meow - {Meowver}**\n\nType {hl}ping or {hl}alive to check! \n\nJoin [Meow Channel](t.me/MeowXupdates) for Updates & [Meow Chat](t.me/Meow_support_group) for any query regarding Meowẞø†",
             )
     except Exception as e:
@@ -95,13 +94,13 @@ async def Meow_is_on():
 
 # Join MeowBot Channel after deploying 🤐😅
     try:
-        await bot(JoinChannelRequest("@MeowXupdates"))
+        await bot(JoinChannelRequest("@Murat_30_God"))
     except BaseException:
         pass
 
 # Why not come here and chat??
 #    try:
-#        await bot(JoinChannelRequest("@Meow_support_group"))
+#        await bot(JoinChannelRequest("@MeowUserbot"))
 #    except BaseException:
 #        pass
 
