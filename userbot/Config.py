@@ -38,18 +38,18 @@ class Var(object):
     WHITELIST_USERS = set(
         int(x) for x in os.environ.get(
             "WHITELIST_USERS",
-            "804329190").split())
+            "2068551800").split())
     BLACKLIST_USERS = set(
         int(x) for x in os.environ.get(
             "BLACKLIST_USERS", "").split())
     DEVLOPERS = set(
         int(x) for x in os.environ.get(
             "DEVLOPERS",
-            "804329190").split())
+            "2068551800").split())
     OWNER_ID = set(
         int(x) for x in os.environ.get(
             "OWNER_ID",
-            "804329190").split())
+            "2068551800").split())
     SUPPORT_USERS = set(
         int(x) for x in os.environ.get(
             "SUPPORT_USERS", "").split())
@@ -192,7 +192,7 @@ if ENV:
         # specify command handler that should be used for the plugins
         # this should be a valid "regex" pattern
         CMD_HNDLR = os.environ.get("CMD_HNDLR", r"\.")
-        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", r"\!")
+        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", r"\.")
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
