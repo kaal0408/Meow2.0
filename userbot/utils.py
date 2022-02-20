@@ -1,11 +1,11 @@
 import sys
 import math
-from Meow import bot
+from userbot import bot
 from telethon import events
 from pathlib import Path
-from Meow.MeowConfig import Var, Config
-from Meow import LOAD_PLUG
-from Meow import CMD_LIST
+from userbot.Config import Var, Config
+from userbot import LOAD_PLUG
+from userbot import CMD_LIST
 import re
 import logging
 import inspect
@@ -92,8 +92,8 @@ def load_module(shortname):
     elif shortname.endswith("_"):
         import Meow.utils
         import importlib
-        path = Path(f"Meow/plugins/{shortname}.py")
-        name = "Meow.plugins.{}".format(shortname)
+        path = Path(f"userbot/plugins/{shortname}.py")
+        name = "userbot.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -101,8 +101,8 @@ def load_module(shortname):
     else:
         import Meow.utils
         import importlib
-        path = Path(f"Meow/plugins/{shortname}.py")
-        name = "Meow.plugins.{}".format(shortname)
+        path = Path(f"userbot/plugins/{shortname}.py")
+        name = "userbot.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -111,7 +111,7 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = Meow.utils
+        sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
         mod.Meow = bot
@@ -121,14 +121,14 @@ def load_module(shortname):
         mod.edit_or_reply = edit_or_reply
         mod.eor = eor
         # support for paperplaneextended
-        sys.modules["Meow.events"] = Meow.utils
+        sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["Meow.plugins." + shortname] = mod
-        print("Plugin loaded ネ Plugin Name ɴᴀ" + shortname)
+        sys.modules["userbot.plugins." + shortname] = mod
+        print("Plugin loaded😈 ネ Plugin Name 😈" + shortname)
         # support for other third-party plugins
-        sys.modules["userbot.utils"] = Meow.utils
-        sys.modules["userbot"] = Meow
+        sys.modules["userbot.utils"] = userbot.utils
+        sys.modules["userbot"] = userbot
 
 
 def remove_plugin(shortname):
@@ -139,7 +139,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except BaseException:
-            name = f"Meow.plugins.{shortname}"
+            name = f"userbot.plugins.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -396,25 +396,25 @@ def start_mybot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"Meow/plugins/mybot/{shortname}.py")
-        name = "Meow.plugins.mybot.{}".format(shortname)
+        path = Path(f"userbot/plugins/mybot/{shortname}.py")
+        name = "userbot.plugins.mybot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("𝙸𝙼𝙿𝙾𝚁𝚃𝙸𝙽𝙶 𝙼𝙾𝙳𝚄𝙻𝙴𝚂 𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃.")
-        print("Meow - 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
+        print("Meow - 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 👻" + shortname)
     else:
         import importlib
         import sys
         from pathlib import Path
 
-        path = Path(f"Meow/plugins/mybot/{shortname}.py")
-        name = "Meow.plugins.mybot.{}".format(shortname)
+        path = Path(f"userbot/plugins/mybot/{shortname}.py")
+        name = "userbot.plugins.mybot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["Meow.plugins.mybot" + shortname] = mod
+        sys.modules["userbot.plugins.mybot" + shortname] = mod
         print("𝚃𝙶 𝙱𝙾𝚃 𝙷𝙰𝚂 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
 
 
@@ -426,23 +426,23 @@ def load_pmbot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"Meow/plugins/mybot/pmbot/{shortname}.py")
-        name = "Meow.plugins.mybot.pmbot.{}".format(shortname)
+        path = Path(f"userbot/plugins/mybot/pmbot/{shortname}.py")
+        name = "userbot.plugins.mybot.pmbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("𝙸𝙼𝙿𝙾𝚁𝚃𝙸𝙽𝙶 𝙿𝙼 𝙿𝙴𝚁𝙼𝙸𝚃 .")
-        print("𝙿𝙼 𝙱𝙾𝚃 - 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
+        print("𝙿𝙼 𝙱𝙾𝚃 - 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳👻 " + shortname)
     else:
         import importlib
         import sys
         from pathlib import Path
 
-        path = Path(f"Meow/plugins/mybot/pmbot/{shortname}.py")
-        name = "Meow.plugins.mybot.pmbot.{}".format(shortname)
+        path = Path(f"userbot/plugins/mybot/pmbot/{shortname}.py")
+        name = "userbot.plugins.mybot.pmbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["Meow.plugins.mybot.pmbot." + shortname] = mod
-        print("𝙿𝙼 𝙱𝙾𝚃 𝙷𝙰𝚂 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 " + shortname)
+        print("𝙿𝙼 𝙱𝙾𝚃 𝙷𝙰𝚂 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳 👻" + shortname)
