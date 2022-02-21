@@ -6,7 +6,7 @@ from telethon.tl import functions, types
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from . import BOTLOG, BOTLOG_CHATID, catmemes
+from Meow import BOTLOG, BOTLOG_CHATID, catmemes
 
 
 @bot.on(admin_cmd(pattern="spam (.*)"))
