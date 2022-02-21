@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 from Meow.utils import load_module, remove_plugin
-from Meow import ALIVE_NAME, CMD_HELP, 
+from Meow import ALIVE_NAME, CMD_HELP 
 from Meow.Config import SUDO_USERS
 
 DELETE_TIMEOUT = 5
