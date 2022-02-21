@@ -3,11 +3,11 @@ import os
 from pathlib import Path
 
 from Meow.utils import load_module, remove_plugin
-from Meow import ALIVE_NAME, CMD_LIST, SUDO_LIST
+from Meow import ALIVE_NAME, CMD_LIST, SUDO_USERS
 
 DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
 
 
 @bot.on(admin_cmd(pattern="install$"))
