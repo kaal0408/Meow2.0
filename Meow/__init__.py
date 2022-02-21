@@ -18,7 +18,7 @@ else:
     bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
 
 StartTime = time.time()
-luciferver = "2.1"
+meowver = "2.1"
 
 CMD_LIST = {}
 CMD_HELP = {}
