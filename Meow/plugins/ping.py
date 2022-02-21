@@ -2,10 +2,10 @@ import asyncio
 from datetime import datetime
 import time
 
-from firebot import ALIVE_NAME, CMD_HELP
-from firebot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from Meow import ALIVE_NAME, CMD_HELP
+from Meow.utils import admin_cmd, sudo_cmd, edit_or_reply
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Fire-X"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
 
 
 
@@ -22,7 +22,7 @@ async def _(event):
 ┗┛━━━━━┛┛┗┛━┓┃┛
 ━━━━━━━━━━━━┛┃━
 ━━━━━━━━━━━━━┛━
-__FIRE-X__ is **ON!**ツ
+__MEOW-2.0__ is **ON!**ツ
 •My Master→ {DEFAULTUSER}
 ↓||•Ms•||↓
 """
