@@ -8,7 +8,7 @@ import telethon.utils
 from telethon import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 
-from Meow import LOGS, bot, Meowver
+from Meow import LOGS, bot, meowver
 from Meow.Config import Var
 from Meow.utils import load_module,start_mybot, load_pmbot
 from pathlib import Path
@@ -95,13 +95,13 @@ async def Meow_is_on():
 
 # Join MeowBot Channel after deploying 🤐😅
     try:
-        await bot(JoinChannelRequest("@MeowXupdates"))
+        await bot(JoinChannelRequest("@Murat_30_God"))
     except BaseException:
         pass
 
 # Why not come here and chat??
 #    try:
-#        await bot(JoinChannelRequest("@Meow_support_group"))
+#        await bot(JoinChannelRequest("@Meow_userbot"))
 #    except BaseException:
 #        pass
 
