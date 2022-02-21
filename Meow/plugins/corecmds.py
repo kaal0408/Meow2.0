@@ -3,7 +3,8 @@ import os
 from pathlib import Path
 
 from Meow.utils import load_module, remove_plugin
-from Meow import ALIVE_NAME, CMD_HELP, SUDO_USERS
+from Meow import ALIVE_NAME, CMD_HELP, 
+from Meow.Config import SUDO_USERS
 
 DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
