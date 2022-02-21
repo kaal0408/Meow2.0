@@ -7,7 +7,7 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from Meow import BOTLOG, BOTLOG_CHATID
-
+from Meow import CMD_HELP
 
 @bot.on(admin_cmd(pattern="spam (.*)"))
 @bot.on(sudo_cmd(pattern="spam (.*)", allow_sudo=True))
