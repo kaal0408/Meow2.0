@@ -91,7 +91,7 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import Meow.utils
+        import userbot.utils
         import importlib
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
@@ -100,7 +100,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         print("Successfully (re)imported " + shortname)
     else:
-        import Meow.utils
+        import userbot.utils
         import importlib
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
@@ -116,6 +116,7 @@ def load_module(shortname):
         mod.Config = Config
         mod.borg = bot
         mod.Meow = bot
+        mod.manjeet = bot
         # auto-load
         mod.admin_cmd = admin_cmd
         mod.sudo_cmd = sudo_cmd
