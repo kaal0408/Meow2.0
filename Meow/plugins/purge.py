@@ -4,8 +4,8 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from ..utils import errors_handler
-from . import BOTLOG, BOTLOG_CHATID
+from Meow.utils import errors_handler
+from Meow import BOTLOG, BOTLOG_CHATID
 
 purgelist = {}
 
