@@ -35,7 +35,7 @@ __MEOW-2.0__ is **ON!**ツ
 
     await event.edit(text)
 
-
+#made by #loverboyxd
 CMD_HELP.update(
     {
         "ping": "**Ping**\
