@@ -3,7 +3,7 @@ import math
 from Meow import bot
 from telethon import events
 from pathlib import Path
-from Meow.MeowConfig import Var, Config
+from Meow.Config import Var, Config
 from Meow import LOAD_PLUG
 from Meow import CMD_LIST
 import re
