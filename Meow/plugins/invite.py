@@ -1,5 +1,5 @@
 from telethon import functions
-
+from Meow import ALIVE_NAME, CMD_HELP
 
 @bot.on(admin_cmd(pattern="invite ?(.*)"))
 @bot.on(sudo_cmd(pattern="invite ?(.*)", allow_sudo=True))
