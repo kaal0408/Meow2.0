@@ -7,7 +7,7 @@ import os
 import sys
 
 from .Config import Config
-from .Config import Vars
+from .Config import Var
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 import time
