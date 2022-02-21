@@ -1,7 +1,7 @@
 import sys
 from os import execl
 from time import sleep
-
+from Meow import ALIVE_NAME, CMD_HELP
 from Meow import BOTLOG, BOTLOG_CHATID, bot
 from Meow.Config import HEROKU_APP_NAME
 
