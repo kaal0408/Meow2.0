@@ -1,7 +1,7 @@
 import asyncio
 import random
 
-from . import catmemes
+from Meow import catmemes
 
 que = {}
 
