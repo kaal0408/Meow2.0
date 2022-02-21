@@ -2,7 +2,7 @@ import asyncio
 import os
 from pathlib import Path
 
-from ..utils import load_module, remove_plugin
+from Meow.utils import load_module, remove_plugin
 from . import ALIVE_NAME, CMD_LIST, SUDO_LIST
 
 DELETE_TIMEOUT = 5
@@ -19,7 +19,7 @@ async def install(event):
         try:
             downloaded_file_name = await event.client.download_media(
                 await event.get_reply_message(),
-                "userbot/plugins/",
+                "Meow/plugins/",
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
