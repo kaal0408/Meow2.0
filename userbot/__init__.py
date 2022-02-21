@@ -5,7 +5,7 @@ from distutils.util import strtobool as sb
 from logging import basicConfig, getLogger, INFO, DEBUG
 import os
 import sys
-from ..Config import Vars
+from .Config import Vars
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 import time
