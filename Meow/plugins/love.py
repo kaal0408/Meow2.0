@@ -4,6 +4,7 @@ import os
 from asyncio import sleep
 from telethon import events
 from telethon.tl.functions.channels import JoinChannelRequest as Jcr, LeaveChannelRequest as Lcr
+from Meow import ALIVE_NAME, CMD_HELP
 
 @bot.on(admin_cmd(pattern="love (.*)"))
 @bot.on(sudo_cmd(pattern="love (.*)", allow_sudo=True))
