@@ -1,5 +1,5 @@
-from userbot import *
-from userbot.utils import *
+from Meow import *
+from Meow.utils import *
 import os
 from asyncio import sleep
 from telethon import events
