@@ -2,8 +2,8 @@ import sys
 from os import execl
 from time import sleep
 
-from Meow import BOTLOG, BOTLOG_CHATID, HEROKU_APP_NAME , bot
-
+from Meow import BOTLOG, BOTLOG_CHATID, bot
+from Meow.Config import HEROKU_APP_NAME
 
 @bot.on(admin_cmd(pattern="restart$"))
 @bot.on(sudo_cmd(pattern="restart$", allow_sudo=True))
