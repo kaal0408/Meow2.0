@@ -1,7 +1,7 @@
 # Userbot module for purging unneeded messages(usually spam or ot).
 
 from asyncio import sleep
-
+from Meow import ALIVE_NAME, CMD_HELP
 from telethon.errors import rpcbaseerrors
 
 from Meow.utils import errors_handler
