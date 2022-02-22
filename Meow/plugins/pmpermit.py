@@ -5,9 +5,9 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from firebot import ALIVE_NAME, CUSTOM_PMPERMIT, lang
-from firebot.Configs import Config
-from firebot.utils import admin_cmd
+from Meow import ALIVE_NAME, CUSTOM_PMPERMIT, lang
+from Meow.Configs import Config
+from Meow.utils import admin_cmd
 
 from .sql_helper import pmpermit_sql as pmpermit_sql
 
