@@ -1,5 +1,5 @@
-from firebot import ALIVE_NAME, CMD_LIST, lang
-from firebot.utils import admin_cmd,sudo_cmd
+from Meow import ALIVE_NAME, CMD_LIST, lang
+from Meow.utils import admin_cmd,sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
 
