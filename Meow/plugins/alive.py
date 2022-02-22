@@ -6,7 +6,7 @@ from uniborg.util import admin_cmd, sudo_cmd
 
 from Meow import ALIVE_NAME, CMD_HELP
 from Meow.Config import Config
-from Meow.plugins import currentversion
+
 
 
 # Functions
@@ -47,7 +47,6 @@ pm_caption += f"**━━━━━━━|━━━━━|━━━━━━**\n\n
 pm_caption += f"                 ◉✿ ᴍᴀsᴛᴇʀ ✿◉\n  **{DEFAULTUSER}**\n\n"
 pm_caption += f"┏━━━━━━━ɪɴғᴏ━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `ᴛᴇʟᴇᴛʜᴏɴ:` `{version.__version__}` \n"
-pm_caption += f"┣•➳➠ `ᴠᴇʀsɪᴏɴ:` `{currentversion}`\n"
 pm_caption += f"┣•➳➠ `ᴜᴘᴛɪᴍᴇ:` `{uptime}`\n"
 pm_caption += f"┣•➳➠ `ᴄʜᴀɴɴᴇʟ:` [ᴊᴏɪɴ](https://t.me/Murat_30_God)\n"
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
