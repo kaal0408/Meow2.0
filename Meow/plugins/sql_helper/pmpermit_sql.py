@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from Lucifer.plugins.sql_helper import SESSION, BASE
+from Meow.plugins.sql_helper import SESSION, BASE
 
 
 class PMPermit(BASE):
