@@ -10,7 +10,7 @@ from search_engine_parser import GoogleSearch
 from telethon import Button, custom, events, functions
 
 from Meow import ALIVE_NAME, CMD_HELP, CMD_LIST
-from Meow.plugins import inlinestats
+from Meow import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
