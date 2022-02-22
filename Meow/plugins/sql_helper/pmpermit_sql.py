@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from Meow.plugins.sql_helper import BASE, SESSION
+from Meow.plugins.sql_helper import SESSION
 
 
 class PMPermit(BASE):
