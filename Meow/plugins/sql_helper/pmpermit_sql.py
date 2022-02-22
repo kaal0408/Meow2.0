@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from firebot.modules.sql_helper import BASE, SESSION
+from Meow.plugins.sql_helper import BASE, SESSION
 
 
 class PMPermit(BASE):
