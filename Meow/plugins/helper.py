@@ -5,6 +5,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
 
 
 @borg.on(fire_on_cmd(pattern="help ?(.*)"))
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
