@@ -5,7 +5,7 @@ from telethon import version
 from uniborg.util import admin_cmd, sudo_cmd
 
 from Meow import ALIVE_NAME, CMD_HELP
-from Meow.Configs import Config
+from Meow.Config import Config
 from Meow.plugins import currentversion
 
 
