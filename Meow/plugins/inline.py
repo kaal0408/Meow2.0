@@ -6,14 +6,11 @@ from re import findall
 from urllib.parse import quote
 
 import requests
-from pornhub_api import PornhubApi
 from search_engine_parser import GoogleSearch
 from telethon import Button, custom, events, functions
-from youtube_search import YoutubeSearch
 
-from firebot import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
-from firebot.function import _deezer_dl, _ytdl
-from firebot.modules import inlinestats
+from Meow import ALIVE_NAME, CMD_HELP, CMD_LIST, lang
+from Meow.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
@@ -21,7 +18,7 @@ if PMPERMIT_PIC is None:
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Fire-X"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
 
 if lang == "si":
 
@@ -43,11 +40,11 @@ if lang == "si":
         elif event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
                 title="Stats",
-                text=f"**Showing Stats For {DEFAULTUSER}'s Fire-XBot** \nNote --> Only Owner Can Check This \n(C) [Fire-X](https://github.com/TeamEviral/Fire-X)",
+                text=f"**Showing Stats For {DEFAULTUSER}'s Meow-XBot** \nNote --> Only Owner Can Check This \n(C) [Fire-X](https://github.com/TeamEviral/Fire-X)",
                 buttons=[
                     [custom.Button.inline("Show Stats ?", data="terminator")],
-                    [Button.url("Developed By", "https://github.com/TeamEviral")],
-                    [Button.url("Support Chat❤️", "t.me/FireXUserBot")],
+                    [Button.url("Developed By", "https://github.com/kaal0408")],
+                    [Button.url("Support Chat❤️", "t.me/MeowUserbot")],
                 ],
             )
             await event.answer([result])
@@ -149,7 +146,7 @@ if lang == "si":
         yt_dl_data = event.data_match.group(1).decode("UTF-8")
         link_s = yt_dl_data
         if event.query.user_id != bot.uid:
-            text = f"Please Get Your Own Fire-X And Don't Waste My Resources"
+            text = f"Please Get Your Own Meow-X And Don't Waste My Resources"
             await event.answer(text, alert=True)
             return
         is_it = True
@@ -160,7 +157,7 @@ if lang == "si":
         sun = event.data_match.group(1).decode("UTF-8")
 
         if event.query.user_id != bot.uid:
-            text = f"Please Get Your Own FIRE-X And Don't Waste My Resources"
+            text = f"Please Get Your Own Meow-X And Don't Waste My Resources"
             await event.answer(text, alert=True)
             return
         await _deezer_dl(sun, event, tgbot)
@@ -170,7 +167,7 @@ if lang == "si":
         yt_dl_data = event.data_match.group(1).decode("UTF-8")
         link_s = yt_dl_data
         if event.query.user_id != bot.uid:
-            text = f"Please Get Your Own Fire-X And Don't Waste My Resources"
+            text = f"Please Get Your Own Meow-X And Don't Waste My Resources"
             await event.answer(text, alert=True)
             return
         is_it = False
@@ -180,7 +177,7 @@ if lang == "si":
     async def rip(event):
         link_s = event.pattern_match.group(1)
         if event.query.user_id != bot.uid:
-            text = f"Please Get Your Own Fire-X And Don't Waste My Resources."
+            text = f"Please Get Your Own Meow-X And Don't Waste My Resources."
             await event.answer(text, alert=True)
             return
         await _phdl(link_s, event, tgbot)
@@ -319,10 +316,10 @@ else:
                     [custom.Button.inline("Show Stats ?", data="terminator")],
                     [
                         Button.url(
-                            "Repo Here", "https://github.com/TeamEviral/Fire-X"
+                            "Repo Here", "https://github.com/TeamEviral/Meow2.0"
                         )
                     ],
-                    [Button.url("Join Channel ❤️", "t.me/https://t.me/Fire_X_CHANNEL")],
+                    [Button.url("Join Channel ❤️", "t.me/https://t.me/Murat_30_God")],
                 ],
             )
             await event.answer([result])
@@ -532,7 +529,7 @@ else:
 
     def paginate_help(page_number, loaded_modules, prefix):
         number_of_rows = 8
-        number_of_cols = 2
+        number_of_cols = 4
         helpable_modules = []
         for p in loaded_modules:
             if not p.startswith("_"):
@@ -569,358 +566,4 @@ else:
         return pairs
 
 
-@tgbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    testinput = event.pattern_match.group(1)
-    starkisnub = urllib.parse.quote_plus(testinput)
-    results = []
-    sedlyf = "https://api.sumanjay.cf/torrent/?query=" + starkisnub
-    try:
-        okpro = requests.get(url=sedlyf, timeout=10).json()
-    except:
-        pass
-    sed = len(okpro)
-    if sed == 0:
-        resultm = builder.article(
-            title="No Results Found.",
-            description="Check Your Spelling / Keyword",
-            text="**Please, Search Again With Correct Keyword, Thank you !**",
-            buttons=[
-                [
-                    Button.switch_inline(
-                        "Search Again", query="torrent ", same_peer=True
-                    )
-                ],
-            ],
-        )
-        await event.answer([resultm])
-        return
-    if sed > 30:
-        for i in range(30):
-            seds = okpro[i]["age"]
-            okpros = okpro[i]["leecher"]
-            sadstark = okpro[i]["magnet"]
-            okiknow = okpro[i]["name"]
-            starksize = okpro[i]["size"]
-            starky = okpro[i]["type"]
-            seeders = okpro[i]["seeder"]
-            okayz = f"**Title :** `{okiknow}` \n**Size :** `{starksize}` \n**Type :** `{starky}` \n**Seeder :** `{seeders}` \n**Leecher :** `{okpros}` \n**Magnet :** `{sadstark}` "
-            sedme = f"Size : {starksize} Type : {starky} Age : {seds}"
-            results.append(
-                await event.builder.article(
-                    title=okiknow,
-                    description=sedme,
-                    text=okayz,
-                    buttons=Button.switch_inline(
-                        "Search Again", query="torrent ", same_peer=True
-                    ),
-                )
-            )
-    else:
-        for sedz in okpro:
-            seds = sedz["age"]
-            okpros = sedz["leecher"]
-            sadstark = sedz["magnet"]
-            okiknow = sedz["name"]
-            starksize = sedz["size"]
-            starky = sedz["type"]
-            seeders = sedz["seeder"]
-            okayz = f"**Title :** `{okiknow}` \n**Size :** `{starksize}` \n**Type :** `{starky}` \n**Seeder :** `{seeders}` \n**Leecher :** `{okpros}` \n**Magnet :** `{sadstark}` "
-            sedme = f"Size : {starksize} Type : {starky} Age : {seds}"
-            results.append(
-                await event.builder.article(
-                    title=okiknow,
-                    description=sedme,
-                    text=okayz,
-                    buttons=[
-                        Button.switch_inline(
-                            "Search Again", query="torrent ", same_peer=True
-                        )
-                    ],
-                )
-            )
-    await event.answer(results)
 
-
-@tgbot.on(events.InlineQuery(pattern=r"yt (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    testinput = event.pattern_match.group(1)
-    urllib.parse.quote_plus(testinput)
-    results = []
-    moi = YoutubeSearch(testinput, max_results=9).to_dict()
-    if not moi:
-        resultm = builder.article(
-            title="No Results Found.",
-            description="Check Your Spelling / Keyword",
-            text="**Please, Search Again With Correct Keyword, Thank you !**",
-            buttons=[
-                [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-            ],
-        )
-        await event.answer([resultm])
-        return
-    for moon in moi:
-        hmm = moon["id"]
-        mo = f"https://www.youtube.com/watch?v={hmm}"
-        kek = f"https://www.youtube.com/watch?v={hmm}"
-        stark_name = moon["title"]
-        stark_chnnl = moon["channel"]
-        total_stark = moon["duration"]
-        stark_views = moon["views"]
-        moon["long_desc"]
-        kekme = f"https://img.youtube.com/vi/{hmm}/hqdefault.jpg"
-        okayz = f"**Title :** `{stark_name}` \n**Link :** `{kek}` \n**Channel :** `{stark_chnnl}` \n**Views :** `{stark_views}` \n**Duration :** `{total_stark}`"
-        hmmkek = f"Video Name : {stark_name} \nChannel : {stark_chnnl} \nDuration : {total_stark} \nViews : {stark_views}"
-        results.append(
-            await event.builder.document(
-                file=kekme,
-                title=stark_name,
-                description=hmmkek,
-                text=okayz,
-                include_media=True,
-                buttons=[
-                    [custom.Button.inline("Download Video - mp4", data=f"yt_vid_{mo}")],
-                    [custom.Button.inline("Download Audio - mp3", data=f"yt_dla_{mo}")],
-                    [Button.switch_inline("Search Again", query="yt ", same_peer=True)],
-                ],
-            )
-        )
-    await event.answer(results)
-
-
-@tgbot.on(events.InlineQuery(pattern=r"jm (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="Not Allowded",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    testinput = event.pattern_match.group(1)
-    starkisnub = urllib.parse.quote_plus(testinput)
-    results = []
-    search = f"http://starkmusic.herokuapp.com/result/?query={starkisnub}"
-    seds = requests.get(url=search).json()
-    for okz in seds:
-        okz["album"]
-        okmusic = okz["music"]
-        hmmstar = okz["perma_url"]
-        singer = okz["singers"]
-        hmm = okz["duration"]
-        langs = okz["language"]
-        hidden_url = okz["media_url"]
-        okayz = (
-            f"**Song Name :** `{okmusic}` \n**Singer :** `{singer}` \n**Song Url :** `{hmmstar}`"
-            f"\n**Language :** `{langs}` \n**Download Able Url :** `{hidden_url}`"
-            f"\n**Duration :** `{hmm}`"
-        )
-        hmmkek = (
-            f"Song : {okmusic} Singer : {singer} Duration : {hmm} \nLanguage : {langs}"
-        )
-        results.append(
-            await event.builder.article(
-                title=okmusic,
-                description=hmmkek,
-                text=okayz,
-                buttons=Button.switch_inline(
-                    "Search Again", query="jm ", same_peer=True
-                ),
-            )
-        )
-    await event.answer(results)
-
-
-@tgbot.on(events.InlineQuery(pattern=r"google (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X  To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    results = []
-    match = event.pattern_match.group(1)
-    page = findall(r"page=\d+", match)
-    try:
-        page = page[0]
-        page = page.replace("page=", "")
-        match = match.replace("page=" + page[0], "")
-    except IndexError:
-        page = 1
-
-    search_args = (str(match), int(page))
-    gsearch = GoogleSearch()
-    gresults = await gsearch.async_search(*search_args)
-    for i in range(len(gresults["links"])):
-        try:
-            title = gresults["titles"][i]
-            link = gresults["links"][i]
-            desc = gresults["descriptions"][i]
-            okiknow = f"**GOOGLE - SEARCH** \n[{title}]({link})\n\n`{desc}`"
-            results.append(
-                await event.builder.article(
-                    title=title,
-                    description=desc,
-                    text=okiknow,
-                    buttons=[
-                        Button.switch_inline(
-                            "Search Again", query="google ", same_peer=True
-                        )
-                    ],
-                )
-            )
-        except IndexError:
-            break
-    await event.answer(results)
-
-
-@tgbot.on(events.InlineQuery(pattern=r"ph (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    results = []
-    input_str = event.pattern_match.group(1)
-    api = PornhubApi()
-    data = api.search.search(input_str, ordering="mostviewed")
-    ok = 1
-    for vid in data.videos:
-        if ok <= 5:
-            lul_m = f"**PORN-HUB SEARCH** \n**Video title :** `{vid.title}` \n**Video link :** `https://www.pornhub.com/view_video.php?viewkey={vid.video_id}`"
-            results.append(
-                await event.builder.article(
-                    title=vid.title,
-                    text=lul_m,
-                    buttons=[
-                        Button.switch_inline(
-                            "Search Again", query="ph ", same_peer=True
-                        )
-                    ],
-                )
-            )
-        else:
-            pass
-    await event.answer(results)
-
-
-@tgbot.on(events.InlineQuery(pattern=r"xkcd (.*)"))
-async def inline_id_handler(event: events.InlineQuery.Event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    input_str = event.pattern_match.group(1)
-    xkcd_id = None
-    if input_str:
-        if input_str.isdigit():
-            xkcd_id = input_str
-        else:
-            xkcd_search_url = "https://relevantxkcd.appspot.com/process?"
-            queryresult = requests.get(
-                xkcd_search_url, params={"action": "xkcd", "query": quote(input_str)}
-            ).text
-            xkcd_id = queryresult.split(" ")[2].lstrip("\n")
-    if xkcd_id is None:
-        xkcd_url = "https://xkcd.com/info.0.json"
-    else:
-        xkcd_url = "https://xkcd.com/{}/info.0.json".format(xkcd_id)
-    r = requests.get(xkcd_url)
-    if r.ok:
-        data = r.json()
-        year = data.get("year")
-        month = data["month"].zfill(2)
-        day = data["day"].zfill(2)
-        xkcd_link = "https://xkcd.com/{}".format(data.get("num"))
-        safe_title = data.get("safe_title")
-        data.get("transcript")
-        alt = data.get("alt")
-        img = data.get("img")
-        data.get("title")
-        output_str = """
-[XKCD]({})
-Title: {}
-Alt: {}
-Day: {}
-Month: {}
-Year: {}""".format(
-            xkcd_link, safe_title, alt, day, month, year
-        )
-        lul_k = builder.photo(file=img, text=output_str)
-        await event.answer([lul_k])
-    else:
-        resultm = builder.article(title="- No Results :/ -", text=f"No Results Found !")
-        await event.answer([resultm])
-
-
-@tgbot.on(events.InlineQuery(pattern=r"deezer ?(.*)"))
-async def inline_id_handler(event):
-    builder = event.builder
-    if event.query.user_id != bot.uid:
-        resultm = builder.article(
-            title="- Not Allowded -",
-            text=f"You Can't Use This Bot. \nDeploy Fire-X To Get Your Own Assistant, Repo Link [Here](https://github.com/TeamEviral/Fire-X)",
-        )
-        await event.answer([resultm])
-        return
-    results = []
-    input_str = event.pattern_match.group(1)
-    link = f"https://api.deezer.com/search?q={input_str}&limit=7"
-    dato = requests.get(url=link).json()
-    # data_s = json.loads(data_s)
-    for match in dato.get("data"):
-        match.get("link")
-        hmm_m = f"Title : {match['title']} \nLink : {match['link']} \nDuration : {match['duration']} seconds \nBy : {match['artist']['name']}"
-        results.append(
-            await event.builder.document(
-                file=match["album"]["cover_medium"],
-                title=match["title"],
-                text=hmm_m,
-                description=f"Artist: {match['artist']['name']}\nAlbum: {match['album']['title']}",
-                buttons=[
-                    [
-                        custom.Button.inline(
-                            "Download Audio - mp3", data=f"deezer_dl_{match['title']}"
-                        )
-                    ],
-                    [
-                        Button.switch_inline(
-                            "Search Again", query="deezer ", same_peer=True
-                        )
-                    ],
-                ],
-            ),
-        )
-    if results:
-        try:
-            await event.answer(results)
-        except TypeError:
-            pass
