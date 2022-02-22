@@ -1,13 +1,12 @@
-"""Check if firebot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
-# CREDITS: @WhySooSerious, @Sur_vivor
+
 import time
 
 from telethon import version
 from uniborg.util import fire_on_cmd, sudo_cmd
 
-from firebot import ALIVE_NAME, CMD_HELP, Lastupdate
-from firebot.Configs import Config
-from firebot.modules import currentversion
+from Meow import ALIVE_NAME, CMD_HELP, Lastupdate
+from Meow.Configs import Config
+from Meow.plugins import currentversion
 
 
 # Functions
@@ -40,9 +39,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 uptime = get_readable_time((time.time() - Lastupdate))
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "firebot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
 PM_IMG = Config.ALIVE_IMAGE
-pm_caption = "  __**★ғɪʀᴇ-x ɪs ʀᴜɴɴɪɴɢ sᴜᴄᴇssғᴜʟʟʏ★**__\n\n"
+pm_caption = "  __**★meow-x ɪs ʀᴜɴɴɪɴɢ sᴜᴄᴇssғᴜʟʟʏ★**__\n\n"
 
 pm_caption += f"**━━━━━━━|━━━━━|━━━━━━**\n\n"
 pm_caption += f"                 ◉✿ ᴍᴀsᴛᴇʀ ✿◉\n  **{DEFAULTUSER}**\n\n"
@@ -50,10 +49,10 @@ pm_caption += f"┏━━━━━━━ɪɴғᴏ━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `ᴛᴇʟᴇᴛʜᴏɴ:` `{version.__version__}` \n"
 pm_caption += f"┣•➳➠ `ᴠᴇʀsɪᴏɴ:` `{currentversion}`\n"
 pm_caption += f"┣•➳➠ `ᴜᴘᴛɪᴍᴇ:` `{uptime}`\n"
-pm_caption += f"┣•➳➠ `ᴄʜᴀɴɴᴇʟ:` [ᴊᴏɪɴ](https://t.me/Fire_X_CHANNEL)\n"
+pm_caption += f"┣•➳➠ `ᴄʜᴀɴɴᴇʟ:` [ᴊᴏɪɴ](https://t.me/Murat_30_God)\n"
 pm_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
-pm_caption += f" ||•|| sᴇᴄᴜʀɪᴛʏ ʙʏ ғɪʀᴇ-x ||•||\n"
-pm_caption += " [ɢɪᴛʜᴜʙ](https://github.com/TeamEviral/Fire-X) • [ɢʀᴏᴜᴘ](https://t.me/FireXUserBot)"
+pm_caption += f" ||•|| sᴇᴄᴜʀɪᴛʏ ʙʏ meow-x ||•||\n"
+pm_caption += " [ɢɪᴛʜᴜʙ](https://github.com/kaal0408/Meow2.0) • [ɢʀᴏᴜᴘ](https://t.me/MeowUserbot)"
 
 
 @fire.on(fire_on_cmd(pattern=r"alive"))
