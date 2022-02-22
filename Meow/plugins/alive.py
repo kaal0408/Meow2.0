@@ -55,8 +55,8 @@ pm_caption += f" ||•|| sᴇᴄᴜʀɪᴛʏ ʙʏ meow-x ||•||\n"
 pm_caption += " [ɢɪᴛʜᴜʙ](https://github.com/kaal0408/Meow2.0) • [ɢʀᴏᴜᴘ](https://t.me/MeowUserbot)"
 
 
-@fire.on(fire_on_cmd(pattern=r"alive"))
-@fire.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+@borg.on(fire_on_cmd(pattern=r"alive"))
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def chris(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
@@ -68,6 +68,6 @@ CMD_HELP.update(
     {
         "alive": "**ALive**\
 \n\n**Syntax : **`.alive`\
-\n**Usage :** Check if firebot UserBot is Alive"
+\n**Usage :** Check if meowbot UserBot is Alive"
     }
 )
