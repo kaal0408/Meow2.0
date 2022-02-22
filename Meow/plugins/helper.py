@@ -1,4 +1,4 @@
-from Meow import ALIVE_NAME, CMD_LIST, lang
+from Meow import ALIVE_NAME, CMD_LIST
 from Meow.utils import admin_cmd,sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Meow-X"
