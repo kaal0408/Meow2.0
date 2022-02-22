@@ -5,7 +5,7 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from Meow import ALIVE_NAME, CUSTOM_PMPERMIT, lang
+from Meow import ALIVE_NAME, CUSTOM_PMPERMIT
 from Meow.Configs import Config
 from Meow.utils import admin_cmd
 
