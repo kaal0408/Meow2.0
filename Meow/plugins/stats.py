@@ -6,8 +6,8 @@ from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Meow import CMD_HELP
+from Meow.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="stats$"))
@@ -80,7 +80,7 @@ async def stats(
     response += (
         f"**❅** ✘ **υияєα∂ мєитισиѕ:** `{unread_mentions}` ✘\n**❅──────✧❅✦❅✧──────❅**\n"
     )
-    response += f"→ **Powered by [AKB](t.me/Astro_HelpChat)** ←"
+    response += f"→ **Powered by [Meow](t.me/Murat_30_God)** ←"
     await alain.edit(response)
 
 
