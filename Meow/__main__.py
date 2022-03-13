@@ -16,7 +16,6 @@ import telethon.utils
 from Meow import CMD_HNDLR
 
 MEOW = Var.PRIVATE_GROUP_ID
-BOTNAME = Var.TG_BOT_USER_NAME_BF_HER
 LOAD_MYBOT = Var.LOAD_MYBOT
 
 # let's get the bot ready
