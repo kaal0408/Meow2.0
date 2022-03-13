@@ -30,16 +30,6 @@
    "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
    "value": "",
    "required": true
-  },  
-  "CHROME_BIN": {
-   "description": "Leave as such, Google Chrome (or) Chromium binary location for selenium based modules.",
-   "value": "/usr/bin/google-chrome",
-   "required": false
-  },
-  "CHROME_DRIVER": {
-   "description": "Leave as such, ChromeDriver location for selenium based modules",
-   "value": "/usr/bin/chromedriver",
-   "required": false
   },
   "SUDO_USERS": {
    "description": "Users you want to give access to your bot. (Don't allow unknown people)",
