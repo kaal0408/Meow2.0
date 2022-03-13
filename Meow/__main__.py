@@ -27,28 +27,9 @@ async def add_bot(bot_token):
 
 async def startup_log_all_done():
     try:
-        await bot.send_message(Meow, f"**𝙻ucifer 𝙱𝙾𝚃 𝙸𝚂 𝙳𝙴𝙿𝙻𝙾𝚈𝙴𝙳.\n𝚂𝙴𝙽𝙳** `{CMD_HNDLR}alive` **𝚃𝙾 𝚂𝙴𝙴 𝙱𝙾𝚃 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙾𝚁 𝙽𝙾𝚃.\n\nAdd** @{BOTNAME} **𝙰𝙳𝙳 𝚃𝙾 𝚃𝙷𝙸𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙷𝙸𝙼 𝙰𝙳𝙼𝙸𝙽 𝙵𝙾𝚁 𝙴𝙽𝙰𝙱𝙻𝙸𝙽𝙶 𝙰𝙻𝙻 𝚃𝙷𝙴 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂 𝙾𝙵 𝙻ucifer 𝙱𝙾𝚃**")
+        await bot.send_message(Meow, f"**Meow 𝙱𝙾𝚃 𝙸𝚂 𝙳𝙴𝙿𝙻𝙾𝚈𝙴𝙳.\n𝚂𝙴𝙽𝙳** `{CMD_HNDLR}alive` **𝚃𝙾 𝚂𝙴𝙴 𝙱𝙾𝚃 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙾𝚁 𝙽𝙾𝚃.\n\nAdd** @{BOTNAME} **𝙰𝙳𝙳 𝚃𝙾 𝚃𝙷𝙸𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙷𝙸𝙼 𝙰𝙳𝙼𝙸𝙽 𝙵𝙾𝚁 𝙴𝙽𝙰𝙱𝙻𝙸𝙽𝙶 𝙰𝙻𝙻 𝚃𝙷𝙴 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂 𝙾𝙵 𝙻ucifer 𝙱𝙾𝚃**")
     except BaseException:
         print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
-
-# Meowbot starter...
-# chal jana bdsk🤧 
-if len(argv) not in (1, 3, 4):
-    bot.disconnect()
-else:
-    bot.tgbot = None
-    if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        print("Initiating Inline Bot")
-        # ForTheGreatrerGood of beautification
-        bot.tgbot = TelegramClient(
-            "TG_BOT_TOKEN_BF_HER",
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH
-        ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
-        print("Initialisation finished with no errors")
-        print("Starting Userbot")
-        bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
-        print("Startup Completed")
     else:
         bot.start()
 
@@ -82,17 +63,6 @@ print(
 )
 
 # that's life...
-async def Meow_is_on():
-    try:
-        if Config.LOGGER_ID != 0:
-            await bot.send_file(
-                Config.LOGGER_ID,
-                HELL_PIC,
-                caption=f"#START \n\nDeployed MeowBot Successfully\n\n**Meow - {Meowver}**\n\nType {hl}ping or {hl}alive to check! \n\nJoin [Meow Channel](t.me/MeowXupdates) for Updates & [Meow Chat](t.me/Meow_support_group) for any query regarding Meowẞø†",
-            )
-    except Exception as e:
-        LOGS.info(str(e))
-
 # Join MeowBot Channel after deploying 🤐😅
     try:
         await bot(JoinChannelRequest("@Murat_30_God"))
