@@ -7,8 +7,8 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from userbot import *
-from userbot.utils import admin_cmd ,sudo_cmd
+from Meow import *
+from Meow.utils import admin_cmd ,sudo_cmd
 
 
 async def get_chatinfo(event):
@@ -66,7 +66,7 @@ def user_full_name(user):
     full_name = " ".join(names)
     return full_name
 
-bot.on(admin_cmd(pattern="inviteall$"))
+@bot.on(admin_cmd(pattern="inviteall$"))
 @bot.on(sudo_cmd(pattern="inviteall$", allow_sudo=True))
 async def get_users(event):
     sender = await event.get_sender()
