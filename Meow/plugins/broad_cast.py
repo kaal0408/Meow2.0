@@ -5,8 +5,8 @@ import asyncio
 from telethon.tl.types import InputMediaUploadedPhoto
 from userbot.utils import admin_cmd
 
-from userbot import CMD_HELP
-from userbot.plugins.sql.broad_sql import (
+from Meow import CMD_HELP
+from Meow.plugins.sql.broad_sql import (
     add_channel,
     get_all_channels,
     in_channels,
