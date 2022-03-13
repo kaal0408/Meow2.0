@@ -2,8 +2,8 @@
 Syntax: .cpin [LOUD]"""
 from telethon.tl import functions
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd ,sudo_cmd
+from Meow import CMD_HELP
+from Meow.utils import admin_cmd ,sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="cpin ?(.*)"))
