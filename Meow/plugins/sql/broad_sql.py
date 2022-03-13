@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from astro.plugins.sql import SESSION, BASE
+from Meow.plugins.sql import SESSION, BASE
 
 
 class ghdb(BASE):
