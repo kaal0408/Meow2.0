@@ -1,6 +1,6 @@
 {
  "name": "Meow 2.0",
- "description": "An advanced Telethon Userbot, from @Lucifer_support_group",
+ "description": "An advanced Telethon Userbot, from @Murat_30_God",
  "keywords": [
   "telegram",
   "userbot",
@@ -8,7 +8,7 @@
   "modular",
   "productivity"
  ],
- "repository": "https://github.com/kaal0408/Meow2?0/",
+ "repository": "https://github.com/kaal0408/Meow2.0/",
  "website": "https://github.com/kaal0408/Meow2.0/",
  "success_url": "https://t.me/Murat_30_God",
  "stack": "container",
