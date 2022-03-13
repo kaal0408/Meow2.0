@@ -4,8 +4,8 @@ from asyncio import sleep
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from astro import bot
-from astro.utils import admin_cmd
+from Meow import bot
+from Meow.utils import admin_cmd
 
 
 @bot.on(admin_cmd(pattern=r"banall", outgoing=True))
